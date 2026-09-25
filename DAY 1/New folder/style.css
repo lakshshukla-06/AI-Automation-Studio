@@ -1,21 +1,17 @@
 /*
-    CSS = Cascading Style Sheets
-
-    CSS controls the appearance of an HTML webpage:
-    colors, fonts, spacing, layout, buttons, etc.
+    CSS controls the visual appearance of our website.
 */
 
+/* ==================== BASIC RESET ==================== */
 
 /*
-    * is the universal selector.
-    It selects ALL HTML elements on the page.
+    * selects every element on the page.
 
     box-sizing: border-box
-    → Makes width/height calculations easier.
+    → Makes sizing easier to control.
 
-    margin: 0
-    padding: 0
-    → Removes the browser's default spacing.
+    margin/padding: 0
+    → Removes browser's default spacing.
 */
 * {
     box-sizing: border-box;
@@ -23,83 +19,222 @@
     padding: 0;
 }
 
+/* ==================== BODY ==================== */
 
-/*
-    body represents the main visible area of our webpage.
-
-    font-family
-    → Sets the text style.
-
-    background-color
-    → Sets the page background.
-
-    color
-    → Sets the default text color.
-
-    line-height
-    → Controls the vertical spacing between lines.
-*/
 body {
     font-family: Arial, sans-serif;
-    background-color: #3a0a8d;
+    background: #f5f7fa;
     color: #222;
     line-height: 1.6;
 }
 
+/* ==================== NAVBAR ==================== */
 
-/*
-    h1 styles our main heading.
+header {
+    display: flex;
 
-    font-size
-    → Controls the size of the text.
+    /* Places logo on left and navigation on right */
+    justify-content: space-between;
 
-    margin-bottom
-    → Creates space below the heading.
-*/
-h1 {
-    font-size: 40px;
-    margin-bottom: 20px;
+    /* Aligns items vertically */
+    align-items: center;
+
+    padding: 20px 8%;
+    background: white;
+
+    /* Keeps navbar visible while scrolling */
+    position: sticky;
+    top: 0;
 }
 
+/* Website logo */
 
-/*
-    p styles our paragraph.
-*/
-p {
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* Navigation container */
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+/* Navigation links */
+
+nav a {
+    text-decoration: none;
+    color: #222;
+    font-weight: 500;
+}
+
+/* Navigation hover effect */
+
+nav a:hover {
+    color: #555;
+}
+
+/* ==================== HERO ==================== */
+
+.hero {
+    text-align: center;
+
+    /* Creates large space around hero content */
+    padding: 120px 20px;
+
+    background: white;
+}
+
+/* Main heading */
+
+.hero h1 {
+    font-size: 56px;
+    max-width: 800px;
+    margin: 0 auto 20px;
+}
+
+/* Hero paragraph */
+
+.hero p {
+    font-size: 20px;
+    max-width: 650px;
+    margin: 0 auto 35px;
+}
+
+/* ==================== BUTTON ==================== */
+
+.cta-button {
+    display: inline-block;
+
+    padding: 14px 28px;
+
+    background: #111;
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+}
+
+/* Button hover effect */
+
+.cta-button:hover {
+    background: #333;
+}
+
+/* ==================== SECTIONS ==================== */
+
+section {
+    padding: 80px 8%;
+}
+
+/* Section headings */
+
+section h2 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+/* ==================== SERVICES ==================== */
+
+.services-container {
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+}
+
+/* Individual service cards */
+
+.service-card {
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    flex: 1;
+
+    max-width: 350px;
+
+    /* Subtle shadow */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Service heading */
+
+.service-card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+/* ==================== ABOUT ==================== */
+
+#about {
+    background: white;
+    text-align: center;
+}
+
+#about p {
+    max-width: 750px;
+    margin: auto;
     font-size: 18px;
+}
+
+/* ==================== CONTACT ==================== */
+
+#contact {
+    text-align: center;
+}
+
+#contact p {
     margin-bottom: 25px;
 }
 
+/* ==================== FOOTER ==================== */
 
-/*
-    button styles the Get Started button.
+footer {
+    text-align: center;
 
-    padding
-    → Creates space inside the button.
+    padding: 25px;
 
-    border
-    → Controls the button's border.
-
-    border-radius
-    → Rounds the corners.
-
-    cursor: pointer
-    → Changes the mouse cursor when hovering over it.
-*/
-button {
-    padding: 12px 24px;
-    background-color: #111;
+    background: #111;
     color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
 }
 
+/* ==================== MOBILE ==================== */
 
 /*
-    :hover applies these styles when the mouse
-    is placed over the button.
+    @media allows us to change the design
+    for smaller screens such as phones.
 */
-button:hover {
-    background-color: #333;
+
+@media (max-width: 768px) {
+
+    /* Stack navigation vertically */
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    /* Smaller hero heading */
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    /* Stack service cards */
+
+    .services-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-card {
+        width: 100%;
+    }
 }
