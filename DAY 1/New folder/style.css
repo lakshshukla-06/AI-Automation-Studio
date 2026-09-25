@@ -1,0 +1,105 @@
+/*
+    CSS = Cascading Style Sheets
+
+    CSS controls the appearance of an HTML webpage:
+    colors, fonts, spacing, layout, buttons, etc.
+*/
+
+
+/*
+    * is the universal selector.
+    It selects ALL HTML elements on the page.
+
+    box-sizing: border-box
+    → Makes width/height calculations easier.
+
+    margin: 0
+    padding: 0
+    → Removes the browser's default spacing.
+*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/*
+    body represents the main visible area of our webpage.
+
+    font-family
+    → Sets the text style.
+
+    background-color
+    → Sets the page background.
+
+    color
+    → Sets the default text color.
+
+    line-height
+    → Controls the vertical spacing between lines.
+*/
+body {
+    font-family: Arial, sans-serif;
+    background-color: #3a0a8d;
+    color: #222;
+    line-height: 1.6;
+}
+
+
+/*
+    h1 styles our main heading.
+
+    font-size
+    → Controls the size of the text.
+
+    margin-bottom
+    → Creates space below the heading.
+*/
+h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+
+/*
+    p styles our paragraph.
+*/
+p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+
+/*
+    button styles the Get Started button.
+
+    padding
+    → Creates space inside the button.
+
+    border
+    → Controls the button's border.
+
+    border-radius
+    → Rounds the corners.
+
+    cursor: pointer
+    → Changes the mouse cursor when hovering over it.
+*/
+button {
+    padding: 12px 24px;
+    background-color: #111;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+
+/*
+    :hover applies these styles when the mouse
+    is placed over the button.
+*/
+button:hover {
+    background-color: #333;
+}
